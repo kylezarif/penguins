@@ -7,24 +7,24 @@ from palmerpenguins import load_penguins
 # Load the dataset
 penguins = load_penguins()
 
-# --- Basic Info ---
-print("\n🔹 First 5 rows:")
+# Basic Info
+print("\n First 5 rows:")
 print(penguins.head())
 
-print("\n🔹 Dataset Info:")
+print("\n Dataset Info:")
 print(penguins.info())
 
-print("\n🔹 Missing values:")
+print("\n Missing values:")
 print(penguins.isnull().sum())
 
-# --- Basic Statistics ---
-print("\n🔹 Summary statistics:")
+# Basic Statistics
+print("\n Summary statistics:")
 print(penguins.describe())
 
-# --- Drop missing values for plotting ---
+# Drop missing values for plotting
 penguins_clean = penguins.dropna()
 
-# --- Visualizations ---
+# Visualizations
 sns.set(style="whitegrid", palette="muted")
 
 # 1. Species distribution

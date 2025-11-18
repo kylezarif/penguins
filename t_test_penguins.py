@@ -23,7 +23,7 @@ biscoe = penguins_clean[(penguins_clean["species"] == "Adelie") & (penguins_clea
 # Filter only Adelie penguins on Dream
 dream = penguins_clean[(penguins_clean["species"] == "Adelie") & (penguins_clean["island"] == "Dream")]["bill_depth_mm"]
 
-# --- Assumption Checks ---
+# Assumption Checks
 print("\n--- Normality Tests (Shapiro-Wilk) ---")
 print("Biscoe normality p-value:", shapiro(biscoe).pvalue)
 print("Dream normality p-value:", shapiro(dream).pvalue)
@@ -31,7 +31,7 @@ print("Dream normality p-value:", shapiro(dream).pvalue)
 print("\n--- Homogeneity of Variance (Levene's Test) ---")
 print("Levene p-value:", levene(biscoe, dream).pvalue)
 
-# --- Independent Samples t-test ---
+# Independent Samples t-test
 t_stat, p_value = ttest_ind(biscoe, dream, equal_var=True)
 
 print("\n--- Independent Samples t-test ---")
@@ -51,7 +51,7 @@ cohens_d = mean_diff / pool_sd
 print("\n--- Effect Size (Cohen's d) ---")
 print("Cohen's d:", cohens_d)
 
-# --- Visualization: Boxplot ---
+# Visualization: Boxplot
 plt.figure(figsize=(6,4))
 sns.boxplot(data=penguins_clean[penguins_clean["species"]=="Adelie"], x="island", y="bill_depth_mm")
 plt.title("Bill Depth (mm) of Adelie Penguins by Island")
@@ -59,7 +59,7 @@ plt.tight_layout()
 plt.savefig("results/adelie_bill_depth_boxplot.png", dpi=300, bbox_inches="tight")
 plt.close()
 
-# --- Visualization: Histograms ---
+# Visualization: Histograms
 plt.figure(figsize=(10,4))
 plt.subplot(1,2,1)
 plt.hist(biscoe, bins=10)
@@ -71,7 +71,7 @@ plt.tight_layout()
 plt.savefig("results/adelie_bill_depth_histograms.png", dpi=300, bbox_inches="tight")
 plt.close()
 
-# --- Q-Q Plots for Normality ---
+# Q-Q Plots for Normality
 plt.figure(figsize=(10,4))
 plt.subplot(1,2,1)
 stats.probplot(biscoe, dist="norm", plot=plt)
