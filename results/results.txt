@@ -1,0 +1,18 @@
+
+Normality Tests (Shapiro-Wilk)
+Biscoe normality p-value: 0.904032190808918
+Dream normality p-value: 0.5183559286271078
+
+Homogeneity of Variance (Levene's Test)
+Levene p-value: 0.5618998627127083
+
+Independent Samples t-test
+t-statistic: 0.5086129644694499
+p-value: 0.6121666519997373
+
+Effect Size (Cohen's d)
+Cohen's d: 0.10246300164262688
+
+Sample Sizes
+Adelie penguins on Biscoe: 44
+Adelie penguins on Dream: 56
